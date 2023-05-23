@@ -1,23 +1,22 @@
 const express = require('express');
 const router = express.Router();
 
-// Ruta para obtener el carrito
+// Ruta GET '/cart'
 router.get('/', (req, res) => {
   // Lógica para obtener el carrito
-  res.send('Obtener carrito');
+  res.json({ message: 'Obteniendo carrito' });
 });
 
-// Ruta para agregar un producto al carrito
+// Ruta POST '/cart'
 router.post('/', (req, res) => {
   // Lógica para agregar un producto al carrito
-  res.send('Agregar producto al carrito');
+  res.json({ message: 'Agregando producto al carrito' });
 });
 
-// Ruta para eliminar un producto del carrito
-router.delete('/:productId', (req, res) => {
-  const productId = req.params.productId;
-  // Lógica para eliminar un producto del carrito
-  res.send(`Eliminar producto del carrito: ${productId}`);
+// Ruta DELETE '/cart'
+router.delete('/', (req, res) => {
+  // Lógica para vaciar el carrito
+  res.json({ message: 'Vaciando carrito' });
 });
 
 module.exports = router;
